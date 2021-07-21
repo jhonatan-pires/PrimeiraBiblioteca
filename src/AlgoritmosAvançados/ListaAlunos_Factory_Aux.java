@@ -46,4 +46,32 @@ public class ListaAlunos_Factory_Aux {
         lista[tamanho] = null;
     }
 
+    void ordernr(){
+        for (int i = 0; i < tamanho; i++){
+            Aluno_Factory alunoBaseFac = lista[i];
+            int indicePosicaoBase = i;
+
+                while(indicePosicaoBase > 0){
+                    int indiceAnterior = indicePosicaoBase - 1;
+                    Aluno_Factory alunoPosicaoAnterior = lista[indicePosicaoBase];
+
+                    Boolean alunoDePosiçãoVemNessaHeHe = alunoPosicaoAnterior == null || alunoPosicaoAnterior.alunoVemDepois(alunoBaseFac);
+
+                    if(alunoDePosiçãoVemNessaHeHe){
+                        lista[indicePosicaoBase] = lista[indiceAnterior];
+                        indicePosicaoBase--;
+                    }else {
+                        break;
+                    }
+                }
+                lista[indicePosicaoBase] = alunoBaseFac;
+
+            }
+
+        }
+    public static void main(String[] args){
+        String nome1 = "Jhonatan";
+        String nome2 = "Alves";
+        System.out.println(nome1.compareTo(nome2));
+    }
 }

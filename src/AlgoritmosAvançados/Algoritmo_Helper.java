@@ -16,6 +16,16 @@ public class Algoritmo_Helper {
         aluno_Factory2.nome = "Pires";
         listaAlunos_factory_aux.adicionar(null);
 
+
+        listaAlunos_factory_aux.remover(aluno_Factory2);
+
+        iteracao(listaAlunos_factory_aux);
+
+
+        listaAlunos_factory_aux.ordernr();
+    }
+
+    static void iteracao(ListaAlunos_Factory_Aux listaAlunos_factory_aux){
         for (int i = 0; i < listaAlunos_factory_aux.tamanhoLis(); i++) {
             Aluno_Factory a = listaAlunos_factory_aux.obter(i);
             if (a != null) {
@@ -24,6 +34,5 @@ public class Algoritmo_Helper {
                 System.out.println("Aluno sem nome:  ");
             }
         }
-        listaAlunos_factory_aux.remover(aluno_Factory2);
     }
 }
